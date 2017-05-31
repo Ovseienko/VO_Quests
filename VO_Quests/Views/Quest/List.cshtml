@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Quest>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row container-quests">
+    <div class="col-xs-12">
+        <h2>Our Quests</h2>
+        <ul class="quests-list row">
+            @foreach (var quest in Model)
+            {
+                <li class="col-xs-4">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-img-top" style="background-image:url('@quest.PosterPath')"></div>
+                        <div class="card-block">
+                            <h4 class="card-title">@quest.QuestName</h4>
+                            <a asp-route-id="@quest.Id" asp-controller="Quest" asp-action="Details" class="btn btn-primary">Go to quest</a>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

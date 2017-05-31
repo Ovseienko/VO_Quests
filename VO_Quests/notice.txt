@@ -1,0 +1,4 @@
+﻿Constants:
+- quests works from 10:00 to 20:00
+- there is schedule only for next 10 days
+- interval between games is 1 hour

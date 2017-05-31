@@ -1,0 +1,18 @@
+﻿@model bool
+@{
+    ViewData["Title"] = "Reservation success";
+}
+
+
+<div class="row">
+    <div class="col-md-3">
+        @if (Model)
+        {
+            <h2>Congratulation!</h2>
+        }
+        else
+        {
+            <h2>Something went wrong!</h2>
+        }
+    </div>
+</div>

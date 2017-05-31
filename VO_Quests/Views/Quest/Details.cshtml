@@ -1,0 +1,24 @@
+﻿@model QuestDetailsVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row container-quests">
+    <div class="col-xs-12">
+        <h2>@Model.QuestName</h2>
+        <img class="quest-img" src="@Model.PosterPath" alt="@Model.QuestName" />
+        <form asp-action="CreateNewReservation" asp-controller="Reservation">
+            @Html.HiddenFor(f => f.QuestId)
+            <select name="SlotDate">
+                <option></option>
+                @foreach (var slot in Model.Slots)
+                {
+                    <option disabled="@(slot.IsAllowed ? null : "disabled")"  value="@(slot.SlotDate)">@slot.SlotDate.DateTime</option>
+                }
+            </select>
+            <button class="btn btn-primary" type="submit">Book!</button>
+        </form>
+
+    </div>
+</div>
